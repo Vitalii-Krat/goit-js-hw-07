@@ -1,4 +1,5 @@
 import { galleryItems } from './gallery-items.js';
+
 // Change code below this line
 
 
@@ -50,10 +51,11 @@ function onGalleryClick(e) {
         return;
     }
 const original =e.target.dataset.source;
-const instance = basicLightbox.create(`<img src="${original}">`);
-instance.show()
+
+  const instance = basicLightbox.create(`<img src="${original}">`);
+  instance.show();
   console.log(instance);
-  
+  instance.show(() => console.log('lightbox now visible'))
     console.log(e.target.dataset.source);
 }
 
