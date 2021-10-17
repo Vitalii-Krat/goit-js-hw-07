@@ -2,10 +2,7 @@ import { galleryItems } from './gallery-items.js';
 
 // Change code below this line
 
-
 const galleryDiv = document.querySelector('.gallery')
-
-
 
 // 1. Создание и рендер разметки по массиву данных galleryItems 
 //и предоставленному шаблону элемента галереи.
@@ -39,6 +36,7 @@ function createPhotoMarkup(elements) {
 
 // 2. Реализация делегирования на div.gallery
 // и получение url большого изображения.
+// Подключение скрипта и стилей библиотеки модального окна basicLightbox. 
 
 galleryDiv.addEventListener('click', onGalleryClick)
 
@@ -50,15 +48,8 @@ function onGalleryClick(e) {
     {
         return;
     }
-const original =e.target.dataset.source;
-
-  const instance = basicLightbox.create(`<img src="${original}">`);
+  const instance = basicLightbox.create(`<img src="${e.target.dataset.source}" width="800" height="600">`);
   instance.show();
-  console.log(instance);
-  instance.show(() => console.log('lightbox now visible'))
-    console.log(e.target.dataset.source);
 }
 
 
-const visible = basicLightbox.visible()
-console.log(visible);
